@@ -20,6 +20,7 @@ const history = useHistory();
 const [position, setPosition] = useState({latitude:0, longitude:0});
 
 const [name, setName] = useState('');
+const [phone_number, setPhone_number] = useState('');
 const [about, setAbout] = useState('');
 const [instructions, setInstructions] = useState('');
 const [opening_hours, setOpening_hours] = useState('');
@@ -59,6 +60,7 @@ const [previewImages, setPreviewImages] = useState<string[]>([]);
 
     const data = new FormData();
     data.append("name", name);
+    data.append("phone_number", phone_number);
     data.append("about", about);
     data.append("latitude", String(latitude));
     data.append("longitude", String(longitude));
@@ -103,6 +105,11 @@ const [previewImages, setPreviewImages] = useState<string[]>([]);
             <div className="input-block">
               <label htmlFor="name">Nome</label>
               <input id="name" value={name} onChange = {event => setName(event.target.value)}/>
+            </div>
+
+            <div className="input-block">
+              <label htmlFor="phone_number">Número de Whatsapp</label>
+              <input id="phone_number" value={phone_number} onChange = {event => setPhone_number(event.target.value)}/>
             </div>
 
             <div className="input-block">
