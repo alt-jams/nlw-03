@@ -74,8 +74,7 @@ const [previewImages, setPreviewImages] = useState<string[]>([]);
 
     await api.post("orphanages", data);
 
-    alert("Sucesso.");
-    history.push("/app");
+    history.push("/done");
   }
 
   return (
