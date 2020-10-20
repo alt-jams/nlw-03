@@ -16,6 +16,7 @@ interface OrphanageDataRouteParams{
 
 export default function OrphanageData() {
   const [name, setName] = useState('');
+  const [phone_number, setPhone_number] = useState('');
   const [about, setAbout] = useState('');
   const [instructions, setInstructions] = useState('');
   const [opening_hours, setOpeningHours] = useState('');
@@ -32,6 +33,7 @@ export default function OrphanageData() {
     const data = new FormData();
 
     data.append('name', name);
+    data.append('phone_number', phone_number);
     data.append('about', about);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
@@ -92,10 +94,12 @@ export default function OrphanageData() {
         onChangeText = {setAbout}
       />
 
-      {/*<Text style={styles.label}>Whatsapp</Text>
+      <Text style={styles.label}>Whatsapp</Text>
       <TextInput
         style={styles.input}
-  />*/}
+        value = {phone_number}
+        onChangeText = {setPhone_number}
+      />
 
       <Text style={styles.label}>Fotos</Text>
 

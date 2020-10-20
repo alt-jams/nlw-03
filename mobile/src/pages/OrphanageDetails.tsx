@@ -50,6 +50,10 @@ export default function OrphanageDetails() {
       Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${orphanage?.latitude},${orphanage?.longitude}`)
   }
 
+  function handleOpenWhatsapp(){
+    Linking.openURL(`http://api.whatsapp.com/send?1=pt_BR&phone=${orphanage?.phone_number}`)
+  }
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.imagesContainer}>
@@ -119,10 +123,10 @@ export default function OrphanageDetails() {
           </View>)}
         </View>
 
-        {/*<RectButton style={styles.contactButton} onPress={() => {}}>
+        <RectButton style={styles.contactButton} onPress={handleOpenWhatsapp}>
           <FontAwesome name="whatsapp" size={24} color="#FFF" />
           <Text style={styles.contactButtonText}>Entrar em contato</Text>
-        </RectButton>*/}
+        </RectButton>
       </View>
     </ScrollView>
   )
